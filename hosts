@@ -1,43 +1,41 @@
+                                                                                                                          
+master ansible_ssh_host=xxx.xxx.xxx.xxx ansible_ssh_port=22
+master1 ansible_ssh_host=xxx.xxx.xxx.xxx ansible_ssh_port=22
+worker01 ansible_ssh_host=xxx.xxx.xxx.xxx ansible_ssh_port=22
+
+
 # Hadoop Nodes
 # ============
 
 [zookeepers]
-master.nflabs.com zookeeper_id=1
-master2.nflabs.com zookeeper_id=2
-pel.nflabs.com zookeeper_id=3
-
+master zookeeper_id=1
+master1 zookeeper_id=2
 # HADDOP DEPLOYMENT
 # =================
 
 [journalnodes]
-master.nflabs.com
-master2.nflabs.com
-pel.nflabs.com
+master
+master1
 
 [namenodes]
-master.nflabs.com
-master2.nflabs.com
+master
+master1
 
 [datanodes]
-data.nflabs.com
+worker01
 
 
-# ELASTICSEARCH
-# =============
+# ELASTICSEARCH                                                                
+# =============                                                                
 
-[elasticsearch]
+[elasticsearch]                                                                
 
-# SPARK
-# =====
-[sparkworkers]
-data.nflabs.com
+# SPARK                                                                        
+# =====                                                                        
+[sparkworkers]                                                                 
+worker01                                                                       
 
 
 [sparkmasters]
-master.nflabs.com
-master2.nflabs.com
-
-# Monitoring
-# ==========
-[monitor]
-pel.nflabs.com
+master
+master1
