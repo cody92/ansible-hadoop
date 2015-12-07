@@ -39,3 +39,7 @@ worker01
 [sparkmasters]
 master
 master1
+
+# Monitoring
+# ==========
+[monitor]
